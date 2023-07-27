@@ -2,6 +2,19 @@
 
 using namespace std;
 
+Game::Game(){
+    // initialize board
+    board.resize(NROWS);
+    for(int i = 0; i < NROWS; i++){
+        board[i].resize(NCOLUMNS);
+        for(int j = 0; j < NCOLUMNS; j++){
+            board[i][j] = empty;
+        }
+    }
+
+    currentTurn = turnP1;
+}
+
 int Game::gameEnded(){
     int result = 0; // 0 -> not ended, 1 -> p1 wins, 2 -> p2 wins
 
@@ -221,4 +234,27 @@ int Game::gameEnded(){
         i++;
     }
 
+    return result;
+}
+
+bool Game::addPiece(int column){
+    bool result = false;
+
+    // piece is added if there is an empty cell in the column
+    for(int i = (NROWS -1) ; i >= 0; i--){
+        if(board[i][column] == empty){
+            if(currentTurn == turnP1){
+                board[i][column] = X;
+                currentTurn = turnP2;
+            }
+            else{
+                board[i][column] = O;
+                currentTurn = turnP1;
+            }
+
+            result = true;            
+        }
+    }
+
+    return result;
 }
