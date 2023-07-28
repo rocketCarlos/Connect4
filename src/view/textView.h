@@ -36,6 +36,12 @@ class TextView {
     void showBoard();
 
     /**
+     * @brief Displays the endgame statistics
+     * @param ending The result of the game. 1 -> p1 wins, 2 -> p2 wins, 3 -> draw
+    */
+   void showEndGame(int ending);
+
+    /**
      * @brief Returns the Game object
      * @return The game object
     */

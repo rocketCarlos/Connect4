@@ -41,6 +41,7 @@ void TextView::showBoard(){
     cout << "Turn: " << game.getNTurn() << endl;
     cout << "Current player: P" << player << endl << endl;
 
+    cout << "  1  2  3  4  5  6  7  " << endl;
     for(int i = 0; i < NROWS; i++){
         cout << "|";
         for(int j = 0; j < NCOLUMNS; j++){
@@ -74,7 +75,7 @@ int TextView::displayMenu(){
     do{
         cout << "Choose an option: " << endl;
         cin >> option;
-    }while(option < 1 or option >= n);
+    }while(option < 0 or option >= n);
 
     return option;
 }
@@ -86,5 +87,30 @@ void TextView::displayHelp(){
     cout << "2. In your turn, choose a column between 1 and 7 to add a piece to that column" << endl;
     cout << "3. First player connecting 4 pieces in horizontal, vertical or diagonal, " << endl <<
     "wins the game." << endl;
+
+}
+
+void TextView::showEndGame(int ending){
+    cout << "     --     GAME OVER     --     " << endl << endl;
+
+    switch(ending){
+        case 1:
+        {
+            cout << "Player 1 wins!" << endl;
+        }
+        break;
+
+        case 2:
+        {
+            cout << "Player 2 wins!" << endl;
+        }
+        break;
+
+        case 3:
+        {
+            cout << "That's a draw!" << endl;
+        }
+        break;
+    }
 
 }

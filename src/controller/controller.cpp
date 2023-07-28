@@ -17,10 +17,14 @@ void Controller::startPlaying(){
         {
             // Game's main loop
             game.showBoard();
-            while(game.getGame().gameEnded() > 0){
+            int ending = 0;
+            do{
                 game.requestAdding();
                 game.showBoard();
-            }
+                ending = game.getGame().gameEnded();
+            }while( ending == 0);
+
+            game.showEndGame(ending);
         }
         break;
 
@@ -28,6 +32,7 @@ void Controller::startPlaying(){
         {
             cout << "This gamemode is not available yet!" << endl;
         }
+        break;
 
     }
 
