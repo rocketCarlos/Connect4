@@ -34,6 +34,12 @@ class TextView {
      * @brief Displays a view of the board
     */
     void showBoard();
+
+    /**
+     * @brief Returns the Game object
+     * @return The game object
+    */
+    inline Game getGame() { return game; }
     
 };
 
