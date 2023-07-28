@@ -11,7 +11,7 @@ class TextView {
     
     public:
 
-    TextView();
+    inline TextView() {}
 
     /**
      * @brief Displays the initial menu of the game

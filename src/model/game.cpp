@@ -8,7 +8,7 @@ Game::Game(){
     for(int i = 0; i < NROWS; i++){
         board[i].resize(NCOLUMNS);
         for(int j = 0; j < NCOLUMNS; j++){
-            board[i][j] = empty;
+            board[i][j] = cell::empty;
         }
     }
 
@@ -22,7 +22,7 @@ int Game::gameEnded(){
     //Check for a draw
     for(int i = 0; i < NCOLUMNS; i++){
         // if there is at least space for one disk, it's not a draw
-        if(board[0][i] == empty){
+        if(board[0][i] == cell::empty){
             result = 0;
         }
     }
@@ -37,7 +37,7 @@ int Game::gameEnded(){
         // check for consecutive equal disks for each row
         while(j < (NCOLUMNS - 1) and result == 0){
             j++;
-            if(board[i][j] == checking and checking != empty){
+            if(board[i][j] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -62,7 +62,7 @@ int Game::gameEnded(){
         // check for consecutive equal disks for each column
         while(j < (NROWS - 1) and result == 0){
             j++;
-            if(board[j][i] == checking and checking != empty){
+            if(board[j][i] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -90,7 +90,7 @@ int Game::gameEnded(){
     while(i < NROWS - 1 and result == 0){
         i++;
         j++;
-        if(board[i][j] == checking and checking != empty){
+        if(board[i][j] == checking and checking != cell::empty){
             connected++;
             if(connected == 4){
                 // 4 connected disks results in endgame
@@ -117,7 +117,7 @@ int Game::gameEnded(){
         while(ii < (NROWS - 1) and jj < (NCOLUMNS - 1) and result == 0){
             ii++;
             jj++;
-            if(board[ii][jj] == checking and checking != empty){
+            if(board[ii][jj] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -146,7 +146,7 @@ int Game::gameEnded(){
         while(ii < (NROWS - 1) and jj < (NCOLUMNS - 1) and result == 0){
             ii++;
             jj++;
-            if(board[ii][jj] == checking and checking != empty){
+            if(board[ii][jj] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -164,8 +164,8 @@ int Game::gameEnded(){
     i = NROWS - 1;
     j = 0;
     // type of disk (X or O)
-    cell checking = board[j][i];
-    int connected = 1;
+    checking = board[j][i];
+    connected = 1;
 
     // check for consecutive equal disks for each ascending diagonal
 
@@ -173,7 +173,7 @@ int Game::gameEnded(){
     while(i < NROWS - 1 and result == 0){
         i--;
         j++;
-        if(board[i][j] == checking and checking != empty){
+        if(board[i][j] == checking and checking != cell::empty){
             connected++;
             if(connected == 4){
                 // 4 connected disks results in endgame
@@ -200,7 +200,7 @@ int Game::gameEnded(){
         while(ii < (NROWS - 1) and jj < (NCOLUMNS - 1) and result == 0){
             ii--;
             jj++;
-            if(board[ii][jj] == checking and checking != empty){
+            if(board[ii][jj] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -229,7 +229,7 @@ int Game::gameEnded(){
         while(ii < (NROWS - 1) and jj < (NCOLUMNS - 1) and result == 0){
             ii--;
             jj++;
-            if(board[ii][jj] == checking and checking != empty){
+            if(board[ii][jj] == checking and checking != cell::empty){
                 connected++;
                 if(connected == 4){
                     // 4 connected disks results in endgame
@@ -251,7 +251,7 @@ bool Game::addPiece(int column){
 
     // piece is added if there is an empty cell in the column
     for(int i = (NROWS -1) ; i >= 0; i--){
-        if(board[i][column] == empty){
+        if(board[i][column] == cell::empty){
             if(currentTurn == turnP1){
                 board[i][column] = X;
                 currentTurn = turnP2;

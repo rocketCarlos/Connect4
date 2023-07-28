@@ -74,15 +74,17 @@ int TextView::displayMenu(){
     do{
         cout << "Choose an option: " << endl;
         cin >> option;
-    }while(option < 1 or option >= 4);
+    }while(option < 1 or option >= n);
 
     return option;
 }
 
 void TextView::displayHelp(){
-    cout << "     --     Connect 4 Quick tutorial     --     " << endl << endl;
+    cout << "     --     Connect 4 Quick guide     --     " << endl << endl;
 
     cout << "1. Pieces are represented by X for player 1 and O for player 2" << endl;
     cout << "2. In your turn, choose a column between 1 and 7 to add a piece to that column" << endl;
-    cout << "3. Win the game by connecting 4 pieces in horizontal, vertical or diagonal" << endl;
+    cout << "3. First player connecting 4 pieces in horizontal, vertical or diagonal, " << endl <<
+    "wins the game." << endl;
+
 }

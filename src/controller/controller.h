@@ -11,7 +11,7 @@ class Controller {
 
     public:
 
-    Controller();
+    inline Controller() {}
 
     /**
      * @brief Starts the game and controls the different game phases
