@@ -3,18 +3,22 @@
 
 #include <vector>
 
-class Game {
-    private:
+ // P1 uses X, P2 uses O
+    enum turn {turnP1, turnP2};
+    
     // Board cells
     enum cell {empty , X , O};
-    // 6rows*7columns board
-    std::vector<std::vector<cell>> board;
-
+    
     const int NROWS = 6;
     const int NCOLUMNS = 7;
 
-    // P1 uses X, P2 uses O
-    enum turn {turnP1, turnP2};
+class Game {
+    private:
+    
+    // 6rows*7columns board
+    std::vector<std::vector<cell>> board;
+
+    int nTurn;
     turn currentTurn;
 
     public:
@@ -41,6 +45,8 @@ class Game {
     inline std::vector<std::vector<cell>> getBoard() { return board; }
 
     inline turn getCurrentTurn() { return currentTurn; }
+
+    inline int getNTurn() { return nTurn; }
 
 };
 

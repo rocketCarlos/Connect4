@@ -13,10 +13,19 @@ Game::Game(){
     }
 
     currentTurn = turnP1;
+    nTurn = 1;
 }
 
 int Game::gameEnded(){
-    int result = 0; // 0 -> not ended, 1 -> p1 wins, 2 -> p2 wins
+    int result = 3; // 0 -> not ended, 1 -> p1 wins, 2 -> p2 wins, 3 -> draw
+
+    //Check for a draw
+    for(int i = 0; i < NCOLUMNS; i++){
+        // if there is at least space for one disk, it's not a draw
+        if(board[0][i] == empty){
+            result = 0;
+        }
+    }
 
     // Check for 4 connected disks in a row
     int i = 0;
@@ -252,7 +261,8 @@ bool Game::addPiece(int column){
                 currentTurn = turnP1;
             }
 
-            result = true;            
+            result = true;
+            nTurn++;            
         }
     }
 
