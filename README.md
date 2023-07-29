@@ -3,7 +3,7 @@ Code for playing Connect 4 in a console
 
 Compile by using the makefile.
 
-How to play: execute the Connect4 executable file and start playing
+How to play: execute the Connect4 executable file that will be located in the ./bin folder and start playing
 
 You can play against another human or vs an AI.
 You can even simulate a match between 2 AI.
@@ -19,7 +19,7 @@ Each turn, players choose a column to put a piece on, which will fall to the low
 
 Example:
 
-     --     Connect 4     --     
+--     Connect 4     --     
 
 Player 1 -> X  |  Player 2 -> O
 Turn: 10
@@ -32,6 +32,4 @@ Current player: P2
 | -  -  -  -  X  -  - |
 | -  -  X  O  O  -  - |
 | -  -  O  X  X  X  O |
------------------------
-
-
+\---------------------

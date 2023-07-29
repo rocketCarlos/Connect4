@@ -1,16 +1,17 @@
+#pragma once
 #ifndef GAME_H
 #define GAME_h
 
 #include <vector>
 
- // P1 uses X, P2 uses O
-    enum turn {turnP1, turnP2};
-    
-    // Board cells
-    enum cell {empty , X , O};
-    
-    const int NROWS = 6;
-    const int NCOLUMNS = 7;
+// P1 uses X, P2 uses O
+enum turn {turnP1, turnP2};
+
+// Board cells
+enum cell {empty , X , O};
+
+const int NROWS = 6;
+const int NCOLUMNS = 7;
 
 class Game {
     private:
@@ -29,6 +30,11 @@ class Game {
     Game();
 
     /**
+     * @brief Copy constructor
+    */
+    Game(Game & game);
+
+    /**
      * @brief Indicates if game has ended
      * @return 0 if not ended, 1 if player 1 won and 2 if player 2 won
     */
@@ -42,7 +48,10 @@ class Game {
     */
     bool addPiece(int column);
 
-    inline std::vector<std::vector<cell>> getBoard() { return board; }
+    /**
+     * @return A constant reference to the board object
+    */
+    inline const std::vector<std::vector<cell>> & getBoard() { return board; }
 
     inline turn getCurrentTurn() { return currentTurn; }
 

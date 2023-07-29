@@ -20,6 +20,12 @@ class TextView {
     int displayMenu();
 
     /**
+     * @brief Displays the AI level selection menu
+     * @return Selected level
+    */
+    int displayAIMenu();
+
+    /**
      * @brief Displays a quick help guide
     */
     void displayHelp();
@@ -29,6 +35,13 @@ class TextView {
      * @return The column where the piece is being added
     */
     int requestAdding();
+
+    /**
+     * @brief Directly adds a piece on a specific column
+     * @param column The column where the piece is being added
+     * @return If succesful, the column where the piece is being added
+    */
+    int requestAdding(int column);
 
     /**
      * @brief Displays a view of the board

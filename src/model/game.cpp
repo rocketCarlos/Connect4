@@ -17,6 +17,12 @@ Game::Game(){
     nTurn = 1;
 }
 
+Game::Game(Game & game){
+    board = game.board;
+    nTurn = game.nTurn;
+    currentTurn = game.currentTurn;
+}
+
 int Game::gameEnded(){
     int result = 3; // 0 -> not ended, 1 -> p1 wins, 2 -> p2 wins, 3 -> draw
 
