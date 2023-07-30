@@ -10,6 +10,13 @@ class AI{
     int AIplayer;
     int level;
 
+    /**
+     * @brief Calculates the heuristic value for a board. Positive values are favorable for P1 
+     * and negative values are favorable for P2.
+     * @return The heuristic value for the board.
+    */
+    int heuristic(const std::vector<std::vector<cell>> & board);
+
     public:
 
     /**

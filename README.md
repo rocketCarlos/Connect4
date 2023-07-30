@@ -17,19 +17,5 @@ First player to connect 4 of its pieces in horizontal, vertical or diagonal, win
 
 Each turn, players choose a column to put a piece on, which will fall to the lowest empty space of that column.
 
-Example:
-
---     Connect 4     --     
-
-Player 1 -> X  |  Player 2 -> O
-Turn: 10
-Current player: P2
-
-  1  2  3  4  5  6  7  
-| -  -  -  -  -  -  - |
-| -  -  -  -  -  -  - |
-| -  -  -  -  -  -  - |
-| -  -  -  -  X  -  - |
-| -  -  X  O  O  -  - |
-| -  -  O  X  X  X  O |
-\---------------------
+If you wish to learn more about Connect 4, check this link: 
+http://www.informatik.uni-trier.de/~fernau/DSL0607/Masterthesis-Viergewinnt.pdf

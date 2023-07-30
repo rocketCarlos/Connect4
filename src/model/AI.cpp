@@ -24,6 +24,11 @@ int AI::getMove(const vector<vector<cell>> & board){
         }
         break;
 
+        // Alpha-beta pruning
+        case 3: {
+            
+        }
+
         default: {
             cout << "This level is not available yet" << endl;
             column = -1;
